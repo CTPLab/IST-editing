@@ -5,6 +5,11 @@ Official PyTorch implementation for the manuscript:
 
 Jiqing Wu, Ingrid Berg and Viktor H. Koelzer.
 
+Biorxiv preprint: https://www.biorxiv.org/content/10.1101/2023.12.23.573175v1
+
+>Advanced spatial transcriptomics (ST) techniques provide comprehensive insights into complex living systems across multiple scales, while simultaneously posing challenges in bioimage analysis. The spatial co-profiling of biological tissues by gigapixel whole slide images (WSI) and gene expression arrays motivates the development of innovative and efficient algorithmic approaches. Using Generative Adversarial Nets (GAN), we introduce Infinite Spatial Transcriptomic editing (IST-editing) and establish gene expression-guided editing in a generated gigapixel mouse pup. Trained with patch-wise high-plex gene expression (input) and matched image data (output), IST-editing enables the synthesis of arbitrarily large bioimages at inference, e.g., with a 106496 X 53248 resolution. After feeding edited gene expressions to the trained network, we model cell-, tissue- and animal-level morphological transitions in the generated mouse pup. Lastly, we discuss and evaluate editing effects on interpretable morphological features.
+
+
 
 <p align="center">
 <img src="visual/model.png" width="1600px"/>  
