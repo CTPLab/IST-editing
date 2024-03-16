@@ -1,6 +1,7 @@
 import cv2
 import torch
 import sparse
+import pyvips
 import imageio
 import argparse
 import numpy as np
@@ -270,12 +271,21 @@ def align_raw_img(gpth, offset, batch, raw_sz,
         img_pth = gpth.replace('_rna.npz', '.jpg')
         img_sty = 'hne' if 'Breast' in gpth else 'dapi'
         img_pth = img_pth.replace('rna', img_sty)
-    st = offset + raw_sz // 2
-    ed = raw_sz * batch + st
-    img = Image.open(img_pth).crop((st, st, ed, ed))
-    if raw_sz != resolution:
-        img = img.resize((resolution * batch,
-                          resolution * batch))
+    elif 'MERFISH' in gpth:
+        img_pth = gpth.replace('.npz', '.tif').replace('gene', 'DAPI')
+    
+    if 'MERFISH' not in gpth:
+        st = offset + raw_sz // 2
+        ed = raw_sz * batch + st
+        img = Image.open(img_pth).crop((st, st, ed, ed))
+        if raw_sz != resolution:
+            img = img.resize((resolution * batch,
+                              resolution * batch))
+    else:
+        st, sz = 256, raw_sz * batch
+        img = pyvips.Image.new_from_file(img_pth, n=-1)
+        img = img.crop(st, st, sz, sz).numpy()
+        img = Image.fromarray(img.astype(np.uint8))
     img.save(save_pth)
 
 
@@ -365,6 +375,8 @@ def run_inf_vid(pth, subs, task,
 
     clt, ckp = pth.parent.name.split('_')[-2], pth.stem
     wsi_crd, wsi_sz = '1_53_0_26', 512 * 6
+    if 'MERFISH' in str(pth):
+        wsi_crd = '0_36_0_52'
     wsi_nam = f'{subs}_{task}_{wsi_crd}_{ckp}_{clt}'
 
     if 'all' in org_dct:
@@ -444,6 +456,8 @@ def run_raw_vid(pth, subs, task, org_dct, idx=0):
     """
 
     wsi_crd, wsi_sz = '1_53_0_26', 512 * 6
+    if 'MERFISH' in str(pth):
+        wsi_crd = '0_36_0_52'
     wsi_nam = f'{subs}_{task}_{wsi_crd}_raw_11'
 
     if 'all' in org_dct:

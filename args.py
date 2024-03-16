@@ -59,7 +59,7 @@ def parse_args():
 
     parser.add_argument('--data_name',
                         type=str,
-                        choices=('CosMx', 'Xenium', 'Xenium_brain', 'Visium', 'Xenium_mouse'),
+                        # choices=('CosMx', 'Xenium', 'Xenium_brain', 'Visium', 'Xenium_mouse'),
                         help='Name of ST platforms')
     parser.add_argument('--data_splt',
                         type=str,

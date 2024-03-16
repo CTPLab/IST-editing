@@ -105,6 +105,22 @@ The downloading links to raw and generated WSIs, which can be examined by open-s
 - [Generated H&E](https://zenodo.org/records/10404337/files/he_gen.tif?download=1)
 
 
+## Supplementary generalization experiments
+- Unzip the downloaded [brain.zip](https://zenodo.org/records/10816781/files/brain_60988.zip?download=1)  to Data/MERFISH folder (create it if not exists). 
+
+- To train the model, run
+  ```
+  sh train_brn.sh
+  ```
+
+- To generate the cell-, tissue-and animal-level images including the gigapixel WSI 
+
+  ```
+  TASK=all_organs_video-bbox-tif_tile  N_ITER=800000 sh infer_brn.sh
+  ```
+- You could examine the generated 73728 X 106496 WSIs for training and test via https://zenodo.org/records/10816781.
+
+
 ## Acknowledgment
 This repository is developed upon [SST-editing](https://github.com/CTPLab/SST-editing) project. 
 Besides, we would like to thank all the researchers contributing to the Xenium mouse pup dataset.
