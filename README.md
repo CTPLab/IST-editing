@@ -18,13 +18,19 @@ If you find this repository helpful for your research, we would appreciate your 
   publisher={Cold Spring Harbor Laboratory}
 }
 
-@article{wu2023silico,
-  title={In silico spatial transcriptomic editing at single-cell resolution},
-  author={Wu, Jiqing and Koelzer, Viktor H},
-  journal={bioRxiv},
-  pages={2023--08},
-  year={2023},
-  publisher={Cold Spring Harbor Laboratory}
+@article{10.1093/bioinformatics/btae077,
+    author = {Wu, Jiqing and Koelzer, Viktor H},
+    title = {SST-editing: in silico spatial transcriptomic editing at single-cell resolution},
+    journal = {Bioinformatics},
+    volume = {40},
+    number = {3},
+    pages = {btae077},
+    year = {2024},
+    month = {02},
+    issn = {1367-4811},
+    doi = {10.1093/bioinformatics/btae077},
+    url = {https://doi.org/10.1093/bioinformatics/btae077},
+    eprint = {https://academic.oup.com/bioinformatics/article-pdf/40/3/btae077/56850944/btae077.pdf},
 }
 ```
 
