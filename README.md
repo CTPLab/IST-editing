@@ -1,21 +1,20 @@
 # IST-editing
-Official PyTorch implementation for the manuscript:
+Official PyTorch implementation for the manuscript accepted by **MIDL (oral)**:
 
 **IST-editing: Infinite spatial transcriptomic editing in a generated gigapixel mouse pup**
 
 Jiqing Wu, Ingrid Berg and Viktor H. Koelzer.
 
-Biorxiv preprint: https://www.biorxiv.org/content/10.1101/2023.12.23.573175v1
+Camera-ready version: https://openreview.net/pdf?id=9pBGVsHdzL
 
 If you find this repository helpful for your research, we would appreciate your citation of the following papers.
 ```
-@article{wu2023editing,
+@inproceedings{wu2024ist,
   title={IST-editing: Infinite spatial transcriptomic editing in a generated gigapixel mouse pup},
   author={Wu, Jiqing and Berg, Ingrid and Koelzer, Viktor H},
-  journal={bioRxiv},
-  pages={2023--12},
-  year={2023},
-  publisher={Cold Spring Harbor Laboratory}
+  booktitle={International Conference on Medical Imaging with Deep Learning},
+  year={2024},
+  organization={PMLR}
 }
 
 @article{10.1093/bioinformatics/btae077,
@@ -39,6 +38,7 @@ If you find this repository helpful for your research, we would appreciate your 
 <br>
 Conceptual illustrations of the proposed model.       
 </p>
+
 
 <p align="center">
 <img src="visual/generated_WSI.png" width="1600px"/>  
